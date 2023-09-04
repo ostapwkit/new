@@ -73,41 +73,41 @@
 	});
 
 	//Скрипт карусели
-	// const carousel = document.querySelector('.carousel');
-	// const container = document.querySelector('.carousel-container');
-	// const dots = document.querySelectorAll('.carousel-dot');
-	// let currentIndex = 0;
+	const carousel = document.querySelector('.carousel');
+	const container = document.querySelector('.carousel-container');
+	const dots = document.querySelectorAll('.carousel-dot');
+	let currentIndex = 0;
 
-	// dots[currentIndex].classList.add('active');
+	dots[currentIndex].classList.add('active');
 
-	// for (let i = 0; i < dots.length; i++) {
-	//     dots[i].addEventListener('click', () => {
-	//         currentIndex = i;
-	//         updateCarousel();
-	//         clearInterval(interval);
-	//         interval = setInterval(autoCarousel, 5000);
-	//     });
-	// }
+	for (let i = 0; i < dots.length; i++) {
+	    dots[i].addEventListener('click', () => {
+	        currentIndex = i;
+	        updateCarousel();
+	        clearInterval(interval);
+	        interval = setInterval(autoCarousel, 5000);
+	    });
+	}
 
-	// function updateCarousel() {
-	//     const translateXValue = -currentIndex * 100;
-	//     container.style.transform = `translateX(${translateXValue}%)`;
+	function updateCarousel() {
+	    const translateXValue = -currentIndex * 100;
+	    container.style.transform = `translateX(${translateXValue}%)`;
 
-	//     for (let i = 0; i < dots.length; i++) {
-	//         if (i === currentIndex) {
-	//             dots[i].classList.add('active');
-	//         } else {
-	//             dots[i].classList.remove('active');
-	//         }
-	//     }
-	// }
+	    for (let i = 0; i < dots.length; i++) {
+	        if (i === currentIndex) {
+	            dots[i].classList.add('active');
+	        } else {
+	            dots[i].classList.remove('active');
+	        }
+	    }
+	}
 
-	// function autoCarousel() {
-	//     currentIndex = (currentIndex + 1) % dots.length;
-	//     updateCarousel();
-	// }
+	function autoCarousel() {
+	    currentIndex = (currentIndex + 1) % dots.length;
+	    updateCarousel();
+	}
 
-	// let interval = setInterval(autoCarousel, 5000);
+	let interval = setInterval(autoCarousel, 5000);
 
 
 	//Скрипт отображаемого блока при выборе текста
